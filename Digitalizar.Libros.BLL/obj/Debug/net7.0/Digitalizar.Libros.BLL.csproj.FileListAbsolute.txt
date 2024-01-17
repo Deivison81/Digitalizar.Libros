@@ -1,0 +1,17 @@
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\bin\Debug\net7.0\Digitalizar.Libros.BLL.deps.json
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\bin\Debug\net7.0\Digitalizar.Libros.BLL.dll
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\bin\Debug\net7.0\Digitalizar.Libros.BLL.pdb
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\bin\Debug\net7.0\Digitalizar.Libros.DAL.dll
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\bin\Debug\net7.0\Digitalizar.Libros.Models.dll
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\bin\Debug\net7.0\Digitalizar.Libros.DAL.pdb
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\bin\Debug\net7.0\Digitalizar.Libros.Models.pdb
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\obj\Debug\net7.0\Digitalizar.Libros.BLL.csproj.AssemblyReference.cache
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\obj\Debug\net7.0\Digitalizar.Libros.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\obj\Debug\net7.0\Digitalizar.Libros.BLL.AssemblyInfoInputs.cache
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\obj\Debug\net7.0\Digitalizar.Libros.BLL.AssemblyInfo.cs
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\obj\Debug\net7.0\Digitalizar.Libros.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\obj\Debug\net7.0\Digitalizar.Libros.BLL.csproj.CopyComplete
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\obj\Debug\net7.0\Digitalizar.Libros.BLL.dll
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\obj\Debug\net7.0\refint\Digitalizar.Libros.BLL.dll
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\obj\Debug\net7.0\Digitalizar.Libros.BLL.pdb
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.BLL\obj\Debug\net7.0\ref\Digitalizar.Libros.BLL.dll

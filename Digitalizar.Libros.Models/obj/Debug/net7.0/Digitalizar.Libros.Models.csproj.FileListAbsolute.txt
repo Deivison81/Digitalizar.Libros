@@ -1,0 +1,12 @@
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.Models\bin\Debug\net7.0\Digitalizar.Libros.Models.deps.json
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.Models\bin\Debug\net7.0\Digitalizar.Libros.Models.dll
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.Models\bin\Debug\net7.0\Digitalizar.Libros.Models.pdb
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.Models\obj\Debug\net7.0\Digitalizar.Libros.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.Models\obj\Debug\net7.0\Digitalizar.Libros.Models.AssemblyInfoInputs.cache
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.Models\obj\Debug\net7.0\Digitalizar.Libros.Models.AssemblyInfo.cs
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.Models\obj\Debug\net7.0\Digitalizar.Libros.Models.csproj.CoreCompileInputs.cache
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.Models\obj\Debug\net7.0\Digitalizar.Libros.Models.dll
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.Models\obj\Debug\net7.0\refint\Digitalizar.Libros.Models.dll
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.Models\obj\Debug\net7.0\Digitalizar.Libros.Models.pdb
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.Models\obj\Debug\net7.0\ref\Digitalizar.Libros.Models.dll
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.Models\obj\Debug\net7.0\Digitalizar.Libros.Models.csproj.AssemblyReference.cache

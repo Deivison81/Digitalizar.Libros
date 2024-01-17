@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Digitalizar.Libros.API.props" />
+</Project>
