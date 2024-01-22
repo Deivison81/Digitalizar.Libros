@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contrato\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Digitalizar.Libros.DAL\Digitalizar.Libros.DAL.csproj" />
     <ProjectReference Include="..\Digitalizar.Libros.Models\Digitalizar.Libros.Models.csproj" />
   </ItemGroup>

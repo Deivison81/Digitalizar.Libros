@@ -86,3 +86,4 @@ C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digit
 C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.API\obj\Debug\net7.0\Digitalizar.Libros.API.pdb
 C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.API\obj\Debug\net7.0\Digitalizar.Libros.API.genruntimeconfig.cache
 C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.API\obj\Debug\net7.0\ref\Digitalizar.Libros.API.dll
+C:\Users\Indatech\Documents\Desarrollo\Proyectos de Practica\PruebaTecnica\Digitalizar.Libros\Digitalizar.Libros.API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

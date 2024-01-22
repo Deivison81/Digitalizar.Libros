@@ -16,7 +16,11 @@ namespace Digitalizar.Libros.DAL.DbContext
         
         }
         
-            
+        public DbSet<Autor>Autores{  get; set; }
         
+        public DbSet<Categoria>Categorias{ get; set; }
+
+        public DbSet<Editorial>Editoriales{ get; set; }
+
     }
 }
