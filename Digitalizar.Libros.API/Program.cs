@@ -96,14 +96,18 @@ builder.Services.AddSwaggerGen(options =>
 //Inyeccion de Dependencias
 // Data Sedder
 builder.Services.AddScoped<IDataSeeder, DataSeeder>();
+
 //Usuarios
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+
 //Token
 builder.Services.AddScoped<ITokenService, TokenService>();
+
 //Categorias
 builder.Services.AddScoped<IGenericRepository<Categoria>, CategoriaRepository>();
 builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+
 //Editorial
 builder.Services.AddScoped<IGenericRepository<Editorial>, EditorialRepository>();
 builder.Services.AddScoped<IEditorialService, EditorialService>();
@@ -111,6 +115,10 @@ builder.Services.AddScoped<IEditorialService, EditorialService>();
 //Autores
 builder.Services.AddScoped<IGenericRepository<Autor>, AutorRepository>();
 builder.Services.AddScoped<IAutorService, AutorService>();
+
+//Libros
+builder.Services.AddScoped<IGenericRepository<Libro>, LibroRepository>();
+builder.Services.AddScoped<ILibroService, LibroService>();
 
 
 var app = builder.Build();

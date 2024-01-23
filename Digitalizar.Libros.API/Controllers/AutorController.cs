@@ -1,10 +1,10 @@
 ﻿using Digitalizar.Libros.BLL.Contrato;
+using Digitalizar.Libros.BLL.Services;
 using Digitalizar.Libros.DAL.Execptions;
 using Digitalizar.Libros.Models.Entidades;
 using Digitalizar.Libros.Models.VModels;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Digitalizar.Libros.API.Controllers
@@ -12,23 +12,23 @@ namespace Digitalizar.Libros.API.Controllers
     [EnableCors("ReglasCors")]
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriaController : ControllerBase
+    public class AutorController : ControllerBase
     {
-        private readonly ICategoriaService _categoriaService;
+        private readonly IAutorService _autorService;
 
-        public CategoriaController(ICategoriaService categoriaService)
+        public AutorController(IAutorService autorService)
         {
-            _categoriaService = categoriaService;
+            _autorService = autorService;
         }
 
-        [HttpGet("Buscar Categoria por ID")]
-        public async Task<ActionResult<VMCategoria>> Listar(int id) 
+        [HttpGet("Buscar Autor por ID")]
+        public async Task<ActionResult<VMAutor>> Listar(int id)
         {
             try
             {
-                var categoria = await _categoriaService.Obtener(id);
+                var autor = await _autorService.Obtener(id);
 
-                return Ok(categoria);
+                return Ok(autor);
             }
             catch (NotFoundException ex)
             {
@@ -39,19 +39,17 @@ namespace Digitalizar.Libros.API.Controllers
 
                 return StatusCode(500, "Error interno del servidor");
             }
-
-            
         }
 
-        [HttpGet("Buscar Categorias")]
-        public async Task<ActionResult<VMCategoria>> ListarTotal()
+        [HttpGet("Buscar Autores")]
+        public async Task<ActionResult<VMAutor>> ListarTotal()
         {
 
             try
             {
-                var categoria = await _categoriaService.ObtenerTodos();
+                var autor = await _autorService.ObtenerTodos();
 
-                return Ok(categoria);
+                return Ok(autor);
             }
             catch (NotFoundException ex)
             {
@@ -65,13 +63,13 @@ namespace Digitalizar.Libros.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<VMCategoria>> Registrar(Categoria modelo) 
+        public async Task<ActionResult<VMAutor>> Registrar(Autor modelo)
         {
             try
             {
-                var categoria = await _categoriaService.Insertar(modelo);
+                var autor = await _autorService.Insertar(modelo);
 
-                return Ok(categoria);
+                return Ok(autor);
             }
             catch (NotFoundException ex)
             {
@@ -82,17 +80,16 @@ namespace Digitalizar.Libros.API.Controllers
 
                 return StatusCode(500, "Error interno del servidor");
             }
-
         }
 
         [HttpPut]
-        public async Task<ActionResult<VMCategoria>> Actualizar(Categoria modelo)
+        public async Task<ActionResult<VMAutor>> Actualizar(Autor modelo)
         {
             try
             {
-                var categoria = await _categoriaService.Actualizar(modelo);
+                var autor = await _autorService.Actualizar(modelo);
 
-                return Ok(categoria);
+                return Ok(autor);
             }
             catch (NotFoundException ex)
             {
@@ -103,7 +100,6 @@ namespace Digitalizar.Libros.API.Controllers
 
                 return StatusCode(500, "Error interno del servidor");
             }
-
         }
 
         [HttpDelete]
@@ -111,7 +107,7 @@ namespace Digitalizar.Libros.API.Controllers
         {
             try
             {
-                var resultado = await _categoriaService.Eliminar(id);
+                var resultado = await _autorService.Eliminar(id);
 
                 return NoContent();
             }
@@ -124,7 +120,5 @@ namespace Digitalizar.Libros.API.Controllers
                 return StatusCode(500, "Error interno del servidor");
             }
         }
-
-
     }
 }

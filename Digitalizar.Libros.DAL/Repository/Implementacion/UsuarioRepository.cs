@@ -31,14 +31,17 @@ namespace Digitalizar.Libros.DAL.Repository.Implementacion
             try
             {
                 var resultado = await userManager.CreateAsync(modelo, password);
+                
                 if (!resultado.Succeeded) return false;
+                
                 var resultadoRol = await userManager.AddToRoleAsync(modelo, "usuario");
+                
                 if (!resultadoRol.Succeeded)
                 {
-
                     await trasaction.RollbackAsync();
                     return false;
                 }
+                
                 await trasaction.CommitAsync();
 
                 return true;

@@ -4,7 +4,6 @@ using Digitalizar.Libros.Models.Entidades;
 using Digitalizar.Libros.Models.VModels;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Digitalizar.Libros.API.Controllers
@@ -12,23 +11,23 @@ namespace Digitalizar.Libros.API.Controllers
     [EnableCors("ReglasCors")]
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriaController : ControllerBase
+    public class EditorialController : ControllerBase
     {
-        private readonly ICategoriaService _categoriaService;
+        private readonly IEditorialService _editorialService;
 
-        public CategoriaController(ICategoriaService categoriaService)
+        public EditorialController(IEditorialService editorialService)
         {
-            _categoriaService = categoriaService;
+            _editorialService = editorialService;
         }
 
-        [HttpGet("Buscar Categoria por ID")]
-        public async Task<ActionResult<VMCategoria>> Listar(int id) 
+        [HttpGet("Buscar Editorial por ID")]
+        public async Task<ActionResult<VMEditorial>> Listar(int id)
         {
             try
             {
-                var categoria = await _categoriaService.Obtener(id);
+                var Editorial = await _editorialService.Obtener(id);
 
-                return Ok(categoria);
+                return Ok(Editorial);
             }
             catch (NotFoundException ex)
             {
@@ -40,18 +39,18 @@ namespace Digitalizar.Libros.API.Controllers
                 return StatusCode(500, "Error interno del servidor");
             }
 
-            
+
         }
 
-        [HttpGet("Buscar Categorias")]
-        public async Task<ActionResult<VMCategoria>> ListarTotal()
+        [HttpGet("Buscar Editorial")]
+        public async Task<ActionResult<VMEditorial>> ListarTotal()
         {
 
             try
             {
-                var categoria = await _categoriaService.ObtenerTodos();
+                var Editorial = await _editorialService.ObtenerTodos();
 
-                return Ok(categoria);
+                return Ok(Editorial);
             }
             catch (NotFoundException ex)
             {
@@ -65,13 +64,13 @@ namespace Digitalizar.Libros.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<VMCategoria>> Registrar(Categoria modelo) 
+        public async Task<ActionResult<VMEditorial>> Registrar(Editorial modelo)
         {
             try
             {
-                var categoria = await _categoriaService.Insertar(modelo);
+                var Editorial = await _editorialService.Insertar(modelo);
 
-                return Ok(categoria);
+                return Ok(Editorial);
             }
             catch (NotFoundException ex)
             {
@@ -86,13 +85,13 @@ namespace Digitalizar.Libros.API.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<VMCategoria>> Actualizar(Categoria modelo)
+        public async Task<ActionResult<VMEditorial>> Actualizar(Editorial modelo)
         {
             try
             {
-                var categoria = await _categoriaService.Actualizar(modelo);
+                var Editorial = await _editorialService.Actualizar(modelo);
 
-                return Ok(categoria);
+                return Ok(Editorial);
             }
             catch (NotFoundException ex)
             {
@@ -111,7 +110,7 @@ namespace Digitalizar.Libros.API.Controllers
         {
             try
             {
-                var resultado = await _categoriaService.Eliminar(id);
+                var resultado = await _editorialService.Eliminar(id);
 
                 return NoContent();
             }
@@ -124,7 +123,6 @@ namespace Digitalizar.Libros.API.Controllers
                 return StatusCode(500, "Error interno del servidor");
             }
         }
-
 
     }
 }

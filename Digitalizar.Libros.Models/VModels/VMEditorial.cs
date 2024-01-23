@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Digitalizar.Libros.Models.VModels
 {
-    public class VMCreacionCategoria
+    public class VMEditorial
     {
-        public string Name { get; set; }
+        public int ID { get; set; }
 
-        public bool Activar { get; set; } = true;
+        public string Name { get; set; }
     }
 }
