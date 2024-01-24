@@ -11,7 +11,7 @@ namespace Digitalizar.Libros.BLL.Contrato
     {
         Task<bool> Insertar(Libro modelo);
 
-        Task<bool> Actualizar(Libro modelo);
+        Task<bool> Actualizar(int id, Libro modelo);
 
         Task<bool> Eliminar(int id);
 

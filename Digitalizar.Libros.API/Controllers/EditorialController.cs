@@ -85,11 +85,11 @@ namespace Digitalizar.Libros.API.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<VMEditorial>> Actualizar(Editorial modelo)
+        public async Task<ActionResult<VMEditorial>> Actualizar(int id, Editorial modelo)
         {
             try
             {
-                var Editorial = await _editorialService.Actualizar(modelo);
+                var Editorial = await _editorialService.Actualizar(id, modelo);
 
                 return Ok(Editorial);
             }

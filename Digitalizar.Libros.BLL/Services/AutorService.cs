@@ -30,11 +30,11 @@ namespace Digitalizar.Libros.BLL.Services
             }
         }
 
-        public async Task<bool> Actualizar(Autor modelo)
+        public async Task<bool> Actualizar(int id, Autor modelo)
         {
             try
             {
-                return await _Autorepo.Actualizar(modelo);
+                return await _Autorepo.Actualizar(id, modelo);
 
             }
             catch (Exception)

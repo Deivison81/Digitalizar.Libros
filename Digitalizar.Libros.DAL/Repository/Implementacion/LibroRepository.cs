@@ -40,14 +40,28 @@ namespace Digitalizar.Libros.DAL.Repository.Implementacion
             }
         }
 
-        public async Task<bool> Actualizar(Libro modelo)
+        public async Task<bool> Actualizar(int id, Libro modelo)
         {
             try
             {
-                var libros = _dbContext.Libros.Update(modelo);
+                var datos = await _dbContext.Libros.Where(e => e.ID == id).FirstOrDefaultAsync();
+                
 
-                if (libros == null) throw new NotFoundException();
+                if (datos == null) throw new NotFoundException();
 
+                datos.Nombre = modelo.Nombre;
+
+                datos.CategoriaID = modelo.CategoriaID;
+
+                datos.AutorID = modelo.AutorID;
+
+                datos.EditorialID  = modelo.EditorialID;
+
+                datos.ruta = modelo.ruta;
+
+                datos.nombre_archivo = modelo.nombre_archivo;
+
+                _dbContext.Libros.Update(datos);
 
                 await _dbContext.SaveChangesAsync();
 

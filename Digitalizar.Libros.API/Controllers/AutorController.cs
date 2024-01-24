@@ -83,11 +83,11 @@ namespace Digitalizar.Libros.API.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<VMAutor>> Actualizar(Autor modelo)
+        public async Task<ActionResult<VMAutor>> Actualizar(int id, Autor modelo)
         {
             try
             {
-                var autor = await _autorService.Actualizar(modelo);
+                var autor = await _autorService.Actualizar(id, modelo);
 
                 return Ok(autor);
             }

@@ -86,11 +86,11 @@ namespace Digitalizar.Libros.API.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<VMCategoria>> Actualizar(Categoria modelo)
+        public async Task<ActionResult<VMCategoria>> Actualizar(int id, Categoria modelo)
         {
             try
             {
-                var categoria = await _categoriaService.Actualizar(modelo);
+                var categoria = await _categoriaService.Actualizar(id, modelo);
 
                 return Ok(categoria);
             }

@@ -135,11 +135,22 @@ namespace Digitalizar.Libros.API.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<VMLibro>> Actualizar(Libro modelo)
+        public async Task<ActionResult> Actualizar([FromBody] VMLibro modelo)
         {
             try
             {
-                var Libro = await _libroService.Actualizar(modelo);
+                int id = modelo.ID;
+                Libro newModelo = new Libro()
+                {
+                    Nombre = modelo.Nombre,
+                    CategoriaID = modelo.CategoriaID,
+                    EditorialID = modelo.EditorialID,
+                    AutorID = modelo.AutorID,
+                    ruta = modelo.ruta,
+                    nombre_archivo = modelo.nombre_archivo
+                };
+
+                var Libro = await _libroService.Actualizar(id, newModelo);
 
                 return Ok(Libro);
             }
