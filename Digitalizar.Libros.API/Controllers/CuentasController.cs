@@ -34,14 +34,8 @@ namespace Digitalizar.Libros.API.Controllers
                     return BadRequest("No se Pudo Agregar el Usuario verifique sus datos");
                 }
 
-                var token = await _tokenService.GenerarToken(modelo.Email, 1);
 
-                RespuestaAuth respuestaAuth = new RespuestaAuth { 
-                    Email = modelo.Email,
-                    Token= token,
-                };
-
-                return Ok(respuestaAuth);
+                return Ok(Resultado);
 
             }catch(Exception) 
             {
@@ -58,6 +52,13 @@ namespace Digitalizar.Libros.API.Controllers
                 var result = await _signInManager.PasswordSignInAsync(CredencialesUsuario.Email, CredencialesUsuario.Password, isPersistent: false, lockoutOnFailure: false);
 
                 if (!result.Succeeded) return BadRequest("Sus Credenciales son Incorrectas");
+
+                var token = await _tokenService.GenerarToken(CredencialesUsuario.Email, 1);
+
+                RespuestaAuth respuestaAuth = new RespuestaAuth { 
+                  Email = CredencialesUsuario.Email,
+                  Token= token,
+                };
 
                 return Ok(await _usuarioService.GetCredencialesAsync(CredencialesUsuario.Email));
                 

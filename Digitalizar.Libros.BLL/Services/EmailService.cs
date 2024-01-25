@@ -22,6 +22,47 @@ namespace Digitalizar.Libros.BLL.Services
             _config = config;
         }
 
+        public async Task<bool> EnviarEmailAsync(string emailDestinatario, string asunto, string mensaje)
+        {
+            try
+            {
+                var email = new MimeMessage();
+
+                email.From.Add(new MailboxAddress("Digitalizar", _config["Email:UserName"]));
+
+
+                email.To.Add(MailboxAddress.Parse(emailDestinatario));
+
+                email.Subject = asunto;
+
+                email.Body = new TextPart(TextFormat.Html)
+                {
+                    Text = mensaje
+                };
+
+
+                using (var smtp = new SmtpClient())
+                {
+
+                    await smtp.ConnectAsync(_config["Email:Host"], int.Parse(_config["Email:Port"]!), SecureSocketOptions.StartTls);
+
+                    await smtp.AuthenticateAsync(_config["Email:UserName"], _config["Email:PassWord"]);
+
+                    await smtp.SendAsync(email);
+
+                    await smtp.DisconnectAsync(true);
+                };
+
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
         public void SendEmail(VMEmail request)
         {
             try

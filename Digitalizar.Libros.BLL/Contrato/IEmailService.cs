@@ -9,6 +9,8 @@ namespace Digitalizar.Libros.BLL.Contrato
 {
     public interface IEmailService
     {
+        Task<bool> EnviarEmailAsync(string emailDestinatario, string asunto, string mensaje);
+
         void SendEmail(VMEmail request);
     }
 }

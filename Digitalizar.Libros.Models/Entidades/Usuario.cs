@@ -12,6 +12,6 @@ namespace Digitalizar.Libros.Models.Entidades
 
         public DateTime FechaCreacion { get; set; }
 
-        public bool Activo { get; set; }
+        public bool Activo { get; set; } = true;
     }
 }

@@ -13,13 +13,15 @@ namespace Digitalizar.Libros.BLL.Services
     public class UsuarioService : IUsuarioService
     {
         private readonly IUsuarioRepository _RegistrarRepo;
+        private readonly IEmailService _EmailRepo;
         private readonly ITokenService _TokenService;
         
 
-        public UsuarioService(IUsuarioRepository registrarRepo, ITokenService TokenService)
+        public UsuarioService(IUsuarioRepository registrarRepo, IEmailService EmailRepo, ITokenService TokenService)
         {
             _RegistrarRepo = registrarRepo;
             _TokenService = TokenService;
+            _EmailRepo = EmailRepo;
            
         }
 
@@ -34,7 +36,12 @@ namespace Digitalizar.Libros.BLL.Services
                 FechaCreacion = DateTime.Now,
             };
 
-            return await _RegistrarRepo.Registrar(Usuario, modelo.Password);
+            var registro = await _RegistrarRepo.Registrar(Usuario, modelo.Password);
+
+
+            await _EmailRepo.EnviarEmailAsync(Usuario.Email, "Registro exitoso","Su registro se a realizado satisfactoriamente");
+
+            return registro;
         }
 
         public async Task<RespuestaAuth> GetCredencialesAsync(string email)
