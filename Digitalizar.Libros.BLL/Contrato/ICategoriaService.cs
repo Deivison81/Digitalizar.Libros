@@ -21,5 +21,7 @@ namespace Digitalizar.Libros.BLL.Contrato
         Task<Categoria> Obtenerxnombre(string nombre);
 
         Task<IQueryable<Categoria>> ObtenerTodos();
+
+        
     }
 }

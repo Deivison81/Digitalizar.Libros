@@ -39,7 +39,18 @@ namespace Digitalizar.Libros.BLL.Services
             var registro = await _RegistrarRepo.Registrar(Usuario, modelo.Password);
 
 
-            await _EmailRepo.EnviarEmailAsync(Usuario.Email, "Registro exitoso","Su registro se a realizado satisfactoriamente");
+            //await _EmailRepo.EnviarEmailAsync(Usuario.Email, "Registro exitoso","Su registro se a realizado satisfactoriamente");
+
+            VMEmail request = new VMEmail()
+            {
+                Para = modelo.Email, 
+                Asunto = "Registro Exitoso",
+                Contenido= "Su registro se a realizado satisfactoriamente"
+
+
+            };
+
+            _EmailRepo.SendEmail(request);
 
             return registro;
         }

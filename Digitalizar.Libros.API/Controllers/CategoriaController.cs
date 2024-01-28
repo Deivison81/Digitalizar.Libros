@@ -51,6 +51,8 @@ namespace Digitalizar.Libros.API.Controllers
             {
                 var categoria = await _categoriaService.ObtenerTodos();
 
+               
+
                 return Ok(categoria);
             }
             catch (NotFoundException ex)

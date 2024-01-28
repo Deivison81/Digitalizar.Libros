@@ -17,5 +17,7 @@ namespace Digitalizar.Libros.DAL.Repository.Contrato
         Task<TEntityModel> Obtener(int id);
 
         Task<IQueryable<TEntityModel>> ObtenerTodos();
+
+        
     }
 }

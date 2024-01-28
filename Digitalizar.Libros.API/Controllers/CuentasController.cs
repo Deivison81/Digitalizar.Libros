@@ -1,12 +1,14 @@
 ﻿using Digitalizar.Libros.BLL.Contrato;
 using Digitalizar.Libros.Models.Entidades;
 using Digitalizar.Libros.Models.VModels;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Digitalizar.Libros.API.Controllers
 {
+    [EnableCors("ReglasCors")]
     [Route("api/[controller]")]
     [ApiController]
     public class CuentasController : ControllerBase

@@ -41,6 +41,8 @@ builder.Services.AddCors(opt =>
     opt.AddPolicy(name: MisReglasCors, builder=>
     {
         builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+
+        builder.WithOrigins("http://www.gmail.com").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
     })
 
 );
@@ -124,6 +126,10 @@ builder.Services.AddScoped<ILibroService, LibroService>();
 
 //Email
 builder.Services.AddScoped<IEmailService, EmailService>();
+
+//Exportar Excel
+builder.Services.AddScoped<IExportarDatos, ExportarDatosService>();
+
 
 
 var app = builder.Build();
