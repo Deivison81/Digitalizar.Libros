@@ -2,6 +2,8 @@
 using Digitalizar.Libros.DAL.Execptions;
 using Digitalizar.Libros.Models.Entidades;
 using Digitalizar.Libros.Models.VModels;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -66,6 +68,7 @@ namespace Digitalizar.Libros.API.Controllers
             }
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
         public async Task<ActionResult<VMCategoria>> Registrar(Categoria modelo) 
         {
@@ -87,6 +90,7 @@ namespace Digitalizar.Libros.API.Controllers
 
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPut]
         public async Task<ActionResult<VMCategoria>> Actualizar(int id, Categoria modelo)
         {
@@ -108,6 +112,7 @@ namespace Digitalizar.Libros.API.Controllers
 
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         [HttpDelete]
         public async Task<IActionResult> Eliminar(int id)
         {

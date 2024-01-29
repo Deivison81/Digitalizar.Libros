@@ -55,18 +55,19 @@ namespace Digitalizar.Libros.API.Controllers
 
                 if (!result.Succeeded) return BadRequest("Sus Credenciales son Incorrectas");
 
-                var token = await _tokenService.GenerarToken(CredencialesUsuario.Email, 1);
-
+                //var token = await _tokenService.GenerarToken(CredencialesUsuario.Email, 1);
+                /*
                 RespuestaAuth respuestaAuth = new RespuestaAuth { 
                   Email = CredencialesUsuario.Email,
                   Token= token,
-                };
+                };*/
 
                 return Ok(await _usuarioService.GetCredencialesAsync(CredencialesUsuario.Email));
-                
-            }catch(Exception)
+            
+            }catch(Exception ex)
             {
-                return StatusCode(500, "Error interno del servidor");
+                //return StatusCode(500, "Error interno del servidor");
+                return Ok(ex.Message);
             }
         }
 

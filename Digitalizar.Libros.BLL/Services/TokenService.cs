@@ -39,21 +39,19 @@ namespace Digitalizar.Libros.BLL.Services
 
             var llave = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["llaveJwt"]!));
 
-            var credencial = new SigningCredentials(llave, SecurityAlgorithms.HmacSha256);
+            var creds = new SigningCredentials(llave, SecurityAlgorithms.HmacSha256);
 
             var expiracion = DateTime.UtcNow.AddDays(diasExpiracion);
 
-            var token = new JwtSecurityToken(issuer: null, audience: null, claims: claims, expires: expiracion, signingCredentials: credencial);
+            var token = new JwtSecurityToken(issuer: null, audience: null, claims: claims, expires: expiracion, signingCredentials: creds);
 
             var respuestaTocken = new JwtSecurityTokenHandler().WriteToken(token);
 
             return respuestaTocken;    
 
         }
-
-        public Task<string> GerenerarToken(string email, int diasExpiracion)
-        {
-            throw new NotImplementedException();
-        }
+        
+        
+        
     }
 }

@@ -2,6 +2,8 @@
 using Digitalizar.Libros.DAL.Execptions;
 using Digitalizar.Libros.Models.Entidades;
 using Digitalizar.Libros.Models.VModels;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -63,6 +65,7 @@ namespace Digitalizar.Libros.API.Controllers
             }
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
         public async Task<ActionResult<VMEditorial>> Registrar(Editorial modelo)
         {
@@ -84,6 +87,7 @@ namespace Digitalizar.Libros.API.Controllers
 
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPut]
         public async Task<ActionResult<VMEditorial>> Actualizar(int id, Editorial modelo)
         {
@@ -105,6 +109,7 @@ namespace Digitalizar.Libros.API.Controllers
 
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         [HttpDelete]
         public async Task<IActionResult> Eliminar(int id)
         {

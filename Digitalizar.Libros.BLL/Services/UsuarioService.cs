@@ -61,7 +61,7 @@ namespace Digitalizar.Libros.BLL.Services
             {
 
                 var usuario = await _RegistrarRepo.GetCredencialesAsync(email);
-
+                          
                 var token = _TokenService.GenerarToken(email, 1);
 
                 return new RespuestaAuth()
