@@ -16,12 +16,14 @@ namespace Digitalizar.Libros.API.Controllers
        private readonly IUsuarioService _usuarioService;
        private readonly SignInManager<Usuario> _signInManager;
        private readonly ITokenService _tokenService;
+       private readonly IEmailService _emailService;
 
-        public CuentasController(IUsuarioService usuarioService, SignInManager<Usuario> signInManager, ITokenService tokenService)
+        public CuentasController(IUsuarioService usuarioService, SignInManager<Usuario> signInManager, ITokenService tokenService, IEmailService emailService)
         {
             _usuarioService = usuarioService;
             _signInManager = signInManager;
             _tokenService = tokenService;
+            _emailService = emailService;
         }
 
         [HttpPost("Registrar")]
@@ -36,7 +38,17 @@ namespace Digitalizar.Libros.API.Controllers
                     return BadRequest("No se Pudo Agregar el Usuario verifique sus datos");
                 }
 
+                VMEmail request = new VMEmail()
+                {
+                    Para = modelo.Email,
+                    Asunto = "Registro exitoso",
+                    Contenido = "su registro ha sido efectuado satisfactoriamente"
 
+
+                };
+
+                 _emailService.SendEmail(request);
+                
                 return Ok(Resultado);
 
             }catch(Exception) 

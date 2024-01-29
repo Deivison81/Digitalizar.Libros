@@ -56,7 +56,7 @@ namespace Digitalizar.Libros.BLL.Services
 
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return false;
@@ -97,9 +97,9 @@ namespace Digitalizar.Libros.BLL.Services
                 smtp.Disconnect(true);
 
             }
-            catch(Exception) 
+            catch(Exception ex) 
             { 
-                throw;  
+               throw  ex;  
             }
            
         }
